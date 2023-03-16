@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express()
+const cors = require('cors')
 
 const fs = require('fs');
 
@@ -7,6 +8,10 @@ const http = require('http');
 const WebSocket = require('ws');
 const server = http.createServer(app);
 const wss = new WebSocket.Server({ server });
+
+app.use(cors({
+  origin: '*'
+}))
 
 // create a new deck of cards
 const suits = ['hearts', 'diamonds', 'clubs', 'spades'];
@@ -386,6 +391,6 @@ app.get('/', (req, res) => {
   return res.send('ok')
 })
 
-server.listen(3000, () => {
+server.listen(5000, () => {
   console.log('Webserver listening on port 3000')
 })
