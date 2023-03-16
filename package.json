@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "description": "This repo is meant for the development of the popular game Sueca with nodejs websockets",
   "main": "app.js",
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
-    "start": "node app",
-    "dev": "nodemon app"
+    "start": "node app.js",
+    "dev": "nodemon app,js"
   },
   "repository": {
     "type": "git",
