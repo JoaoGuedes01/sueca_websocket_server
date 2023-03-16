@@ -1,0 +1,25 @@
+{
+  "name": "sueca_websocket_server",
+  "version": "1.0.0",
+  "description": "This repo is meant for the development of the popular game Sueca with nodejs websockets",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "dev": "nodemon app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoaoGuedes01/sueca_websocket_server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoaoGuedes01/sueca_websocket_server/issues"
+  },
+  "homepage": "https://github.com/JoaoGuedes01/sueca_websocket_server#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "ws": "^8.13.0"
+  }
+}
