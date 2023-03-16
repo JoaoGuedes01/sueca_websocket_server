@@ -5,7 +5,7 @@ const fs = require('fs');
 
 // create a new WebSocket server on port 5000
 const app = express()
-const wss = new WebSocket.Server({ port: 5050 });
+const wss = new WebSocket.Server({ port: 3000 });
 
 // create a new deck of cards
 const suits = ['hearts', 'diamonds', 'clubs', 'spades'];
@@ -385,7 +385,7 @@ app.get('/past-matches', (req, res) => {
   return res.send(JSON.parse(data))
 })
 
-app.listen(5000, () => {
-  console.log('WebServer listening on port 5000')
-  console.log('WebSocket listening on port 5050')
+app.listen(3001, () => {
+  console.log('WebServer listening on port 3001')
+  console.log('WebSocket listening on port 3000')
 })
