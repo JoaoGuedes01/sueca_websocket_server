@@ -1,11 +1,12 @@
 const express = require('express');
-const WebSocket = require('ws');
+const app = express()
+
 const fs = require('fs');
 
-
-// create a new WebSocket server on port 5000
-const app = express()
-const wss = new WebSocket.Server({ port: 3000 });
+const http = require('http');
+const WebSocket = require('ws');
+const server = http.createServer(app);
+const wss = new WebSocket.Server({ server });
 
 // create a new deck of cards
 const suits = ['hearts', 'diamonds', 'clubs', 'spades'];
@@ -365,10 +366,6 @@ const dealCards = () => {
   }
 }
 
-app.get('/', (req, res) => {
-  return res.send('ok')
-})
-
 const saveMatch = (newMatch) => {
   let matches_array = []
   const data = fs.readFileSync('data.json', 'utf8');
@@ -385,7 +382,10 @@ app.get('/past-matches', (req, res) => {
   return res.send(JSON.parse(data))
 })
 
-app.listen(3001, () => {
-  console.log('WebServer listening on port 3001')
-  console.log('WebSocket listening on port 3000')
+app.get('/', (req, res) => {
+  return res.send('ok')
+})
+
+server.listen(3000, () => {
+  console.log('Webserver listening on port 3000')
 })
